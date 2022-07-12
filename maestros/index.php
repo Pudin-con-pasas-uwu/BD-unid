@@ -12,6 +12,7 @@ $users = get_all_maestros($connect);
     <title>master teibol</title>
 </head>
 <body>  
+<h1>datos de las materias <small><a href="Formulario.php">insertar</a></small></h1>
     <table>
         <thead>
             <tr>

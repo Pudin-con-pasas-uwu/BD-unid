@@ -57,9 +57,17 @@ function insertar_alumnos($Cumbre, $CUMellido, $CUMofono, $correo, $cuatrimestre
 
 }
 //insert master
-function insertar_maestros( $nombre, $CUMofono, $apellido, $telefono, $correo, $status){
+function insertar_maestros($nombre, $apellido, $telefono, $correo, $Status){
     global $connect;
-    $consulta = "insert into maestros(nombre, CUMofono, apellido, telefono, correo, status) values('$nombre', '$apellido', '$telefono', '$correo', '$status')";
+    $consulta = "insert into maestros(nombre, apellido, telefono, correo, Status) values('$nombre', '$apellido', '$telefono', '$correo', '$Status')";
+    $resultado = mysqli_query($connect, $consulta);
+    
+    //return $resultado;
+}
+//insert materias
+function insertar_materias($Nombre, $Materia, $Licenciatura, $Cuatrimestre, $Status){
+    global $connect;
+    $consulta = "insert into materias(Nombre, Materia, Licenciatura, Cuatrimestre, Status) values('$Nombre', '$Materia', '$Licenciatura', '$Cuatrimestre', '$Status')";
     $resultado = mysqli_query($connect, $consulta);
     
     //return $resultado;
