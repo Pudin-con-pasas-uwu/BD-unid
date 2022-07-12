@@ -44,7 +44,7 @@ $users = get_all_alumnos($connect);
                 <td><?php echo $fila['status'];?></td>
                 <td><a href="detail.php?id=<?php echo $fila ['cumid']; ?>">detalle</a></td>
                 <td><a href="formaup.php?id=<?php echo $fila ['cumid']; ?>">editar</a></td>
-                <td><a href="#">eliminar</a></td>
+                <td><a href="delform.php?id=<?php echo $fila ['cumid']; ?>">eliminar</a></td>
             </tr>        
             <?php
                     }

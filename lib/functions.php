@@ -76,9 +76,16 @@ function insertar_materias($Nombre, $Materia, $Licenciatura, $Cuatrimestre, $Sta
 //aqui va el update-  (alumnos part)
 function update_alumnos($Cumbre, $CUMellido, $CUMofono, $correo, $cuatrimestre, $licenciatura, $status, $cumid){
     global $connect;
-    $consulta = $consulta = "update alumnos set Cumbre='$Cumbre', CUMellido='$CUMellido', CUMofono='$CUMofono', correo='$correo', cuatrimestre='$cuatrimestre', licenciatura='$licenciatura' where cumid=$cumid";
+    $consulta = "update alumnos set Cumbre='$Cumbre', CUMellido='$CUMellido', CUMofono='$CUMofono', correo='$correo', cuatrimestre='$cuatrimestre', licenciatura='$licenciatura' where cumid=$cumid";
     $resultado = mysqli_query($connect, $consulta);
 
+    //return $resultado;
+}
+// borrar alumno
+function delete_alumnos($Cumbre, $CUMellido, $CUMofono, $correo, $cuatrimestre, $licenciatura, $status, $cumid){
+    global $connect;
+    $consulta = "DELETE FROM alumnos WHERE cumid=$cumid";
+$resultado= mysqli_query($connect, $consulta);
     //return $resultado;
 }
 //TAREA hacer el eliminar hoomie 
