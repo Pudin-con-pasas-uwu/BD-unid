@@ -1,8 +1,8 @@
 <?php 
-require_once("../lib/connect.php");
-$consulta = "SELECT * FROM alumnos";
-$resultado = mysqli_query($connect, $consulta);
-$array = mysqli_fetch_array($resultado);
+
+$connect;
+require_once("../lib/functions.php");
+$users = get_all_alumnos($connect);
 ?>
 
 <!DOCTYPE html>
@@ -14,6 +14,7 @@ $array = mysqli_fetch_array($resultado);
     <title>alumnos teibol</title>
 </head>
 <body>
+    <h1>datos de los alumnos <small><a href="Formulario.php">insertar</a></small></h1>
     <table>
         <thead>
             <tr>
@@ -29,7 +30,7 @@ $array = mysqli_fetch_array($resultado);
         </thead>
         <tbody>    
             <?php
-                while ($fila = mysqli_fetch_array ($resultado)) {
+                while ($fila = mysqli_fetch_array ($users)) {
 
             ?>
             <tr> 
@@ -41,6 +42,9 @@ $array = mysqli_fetch_array($resultado);
                 <td><?php echo $fila['licenciatura'];?></td>
                 <td><?php echo $fila['cuatrimestre'];?></td>
                 <td><?php echo $fila['status'];?></td>
+                <td><a href="detail.php?id=<?php echo $fila ['cumid']; ?>">detalle</a></td>
+                <td><a href="formaup.php?id=<?php echo $fila ['cumid']; ?>">editar</a></td>
+                <td><a href="#">eliminar</a></td>
             </tr>        
             <?php
                     }
@@ -48,4 +52,4 @@ $array = mysqli_fetch_array($resultado);
         </tbody>
     </table>
 </body>
-</html>
+</html> 

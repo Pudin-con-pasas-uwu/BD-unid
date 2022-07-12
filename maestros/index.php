@@ -1,8 +1,7 @@
 <?php 
-require_once("../lib/connect.php");
-$consulta = "SELECT * FROM maestros";
-$resultado = mysqli_query($connect, $consulta);
-$array = mysqli_fetch_array($resultado);
+$connect;
+require_once("../lib/functions.php");
+$users = get_all_maestros($connect);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,7 +26,7 @@ $array = mysqli_fetch_array($resultado);
         </thead>
         <tbody>    
             <?php
-                while ($fila = mysqli_fetch_array ($resultado)) {
+                while ($fila = mysqli_fetch_array ($users)) {
 
             ?>
             <tr> 
@@ -37,7 +36,9 @@ $array = mysqli_fetch_array($resultado);
                 <td><?php echo $fila['telefono'];?></td>
                 <td><?php echo $fila['correo'];?></td>
                 <td><?php echo $fila['Status'];?></td>
-                
+                <td><a href="detail.php?id=<?php echo $fila ['ID']; ?>">detalle</a></td>
+                <td><a href="#">editar</a></td>
+                <td><a href="#">eliminar</a></td>
                 
                 
             </tr>        
