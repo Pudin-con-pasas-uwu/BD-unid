@@ -20,8 +20,6 @@
         <label for ="Status">Status</label> <br>
         <input type="text" id="Status" name= "Status" placeholder="Status"> <br>
         <input type= "submit"><br>
-
-
     </form>
 </body>
 </html> 

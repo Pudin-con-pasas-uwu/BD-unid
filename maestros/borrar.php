@@ -7,7 +7,7 @@ $telefono = $_POST["telefono"];
 $correo = $_POST["correo"];
 $ID = $_POST["ID"];
 
-update_maestros($nombre, $apellido, $telefono, $correo,  $ID);
+delete_maestros($nombre, $apellido, $telefono, $correo, $ID);
 
 header("Location: index.php");
-?> 
+?>

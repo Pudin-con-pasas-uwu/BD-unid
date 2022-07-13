@@ -38,8 +38,8 @@ $users = get_all_maestros($connect);
                 <td><?php echo $fila['correo'];?></td>
                 <td><?php echo $fila['Status'];?></td>
                 <td><a href="detail.php?id=<?php echo $fila ['ID']; ?>">detalle</a></td>
-                <td><a href="#">editar</a></td>
-                <td><a href="#">eliminar</a></td>
+                <td><a href="Formup.php?id=<?php echo $fila ['ID']; ?>">editar</a></td>
+                <td><a href="delform.php?id=<?php echo $fila ['ID']; ?>">eliminar</a></td>
                 
                 
             </tr>        

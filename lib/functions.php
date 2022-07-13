@@ -81,6 +81,20 @@ function update_alumnos($Cumbre, $CUMellido, $CUMofono, $correo, $cuatrimestre, 
 
     //return $resultado;
 }
+//aqui va maestros
+
+function update_maestros($nombre, $apellido, $telefono, $correo,  $ID){
+    global $connect;
+    $consulta = "UPDATE maestros set nombre='$nombre', apellido='$apellido', telefono='$telefono', correo='$correo'where ID=$ID";
+    $resultado = mysqli_query($connect, $consulta);
+}
+
+function update_materias($Nombre, $Materia, $Licenciatura,  $ID){
+    global $connect;
+    $consulta = "UPDATE materias set Nombre='$Nombre', Materia='$Materia', Licenciatura='$Licenciatura', where ID=$ID";
+    $resultado = mysqli_query($connect, $consulta);
+}
+
 // borrar alumno
 function delete_alumnos($Cumbre, $CUMellido, $CUMofono, $correo, $cuatrimestre, $licenciatura, $status, $cumid){
     global $connect;
@@ -88,8 +102,17 @@ function delete_alumnos($Cumbre, $CUMellido, $CUMofono, $correo, $cuatrimestre, 
 $resultado= mysqli_query($connect, $consulta);
     //return $resultado;
 }
-//TAREA hacer el eliminar hoomie 
-//tarea 2 mnsj de errorrrrr -------> es algo del error y un if para mandar echo de error/ otra seria el trycatch
-//set campo correo como un unique
+
+function delete_materias($Nombre, $Materia, $Licenciatura, $Cuatrimestre, $Status, $ID){
+    global $connect;
+    $consulta = "DELETE FROM materias WHERE ID=$ID";
+$resultado= mysqli_query($connect, $consulta);
+}
+
+function delete_maestros($nombre, $apellido, $telefono, $correo, $ID){
+    global $connect;
+    $consulta = "DELETE FROM maestros WHERE ID=$ID";
+$resultado= mysqli_query($connect, $consulta);
+}
 
 ?>
